@@ -157,10 +157,10 @@ svg {
   width: var(--x-w);
   height: var(--x-h);
   flex: 0 0 var(--x-w);
-      margin: 1px 1px 0 1px;
+  margin: 1px 1px 0 1px;
   vertical-align: middle;
   isolation: isolate;
-    filter: drop-shadow(0 0 0px rgba(255, 255, 255, .95)) drop-shadow(0 0 11px rgba(255, 255, 255, .45)) drop-shadow(0 0 14px rgba(20, 180, 255, .35));
+  filter: drop-shadow(0 0 0px rgba(255, 255, 255, .95)) drop-shadow(0 0 11px rgba(255, 255, 255, .45)) drop-shadow(0 0 14px rgba(20, 180, 255, .35));
 }
 
 .brand-x-piece {
@@ -196,7 +196,7 @@ svg {
   z-index: 4;
   background: linear-gradient(45deg, #2650f0 0%, #1778ff 50%, #0da9ee 100%);
   clip-path: polygon(0 84%, 59% 12%, 77% 0, 100% 28%, 58% 100%, 0 100%);
-  
+
 }
 
 /* lower-right ribbon */
@@ -1518,8 +1518,15 @@ select {
   }
 
   @keyframes mobile-menu-in {
-    from { opacity: 0; transform: translateY(-8px) }
-    to { opacity: 1; transform: translateY(0) }
+    from {
+      opacity: 0;
+      transform: translateY(-8px)
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0)
+    }
   }
 
   .lang-switch {
@@ -1537,8 +1544,8 @@ select {
   }
 
   .site-header .brand-x {
-    --x-w: 27px;
-    --x-h: 25px
+    --x-w: 22px;
+    --x-h: 19px;
   }
 
   .header-contact {

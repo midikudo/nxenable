@@ -13,6 +13,11 @@ export const metadata: Metadata = {
     "NXENABLE builds custom software, web & mobile applications, business platforms, API integrations, AI and automation solutions.",
   metadataBase: new URL("https://nxenable.co"),
   alternates: { canonical: "https://nxenable.co" },
+  icons: {
+    icon: [{ url: "/favicon.svg", type: "image/svg+xml" }],
+    shortcut: ["/favicon.svg"],
+    apple: [{ url: "/favicon.svg", type: "image/svg+xml" }]
+  },
   openGraph: {
     title: "NXENABLE | Custom Software Development & Technology Partner",
     description:

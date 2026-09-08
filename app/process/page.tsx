@@ -2,8 +2,9 @@ import PageHero from "@/components/PageHero";
 import Localized from "@/components/Localized";
 import CTA from "@/components/CTA";
 import { process } from "@/components/Data";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata = { title: "Process" };
+export const metadata = pageMetadata("Process", "A clear software delivery process from discovery and design through launch and support.", "/process");
 
 export default function ProcessPage() {
   return (

@@ -47,11 +47,11 @@ export default function Home() {
       <section className="trust-strip-wrap">
         <div className="shell">
           <div className="trust-strip">
-            <div className="trust-item"><strong>10+</strong><span>{th ? "ปีประสบการณ์" : "Years Experience"}</span><small>{th ? "ประสบการณ์ที่พิสูจน์ได้" : "Proven expertise."}</small></div>
-            <div className="trust-item"><Code2/><span>Custom Software</span><small>Tailored to your goals.</small></div>
-            <div className="trust-item"><MonitorSmartphone/><span>Web & Mobile</span><small>Modern applications.</small></div>
-            <div className="trust-item"><Bot/><span>AI & Automation</span><small>Practical business impact.</small></div>
-            <div className="trust-item"><Headphones/><span>Support</span><small>Beyond launch.</small></div>
+            <div className="trust-item"><strong>10+</strong><span>{th ? "ปีประสบการณ์ด้านเทคนิค" : "Years Technical Experience"}</span><small>{th ? "ประสบการณ์ด้านเทคนิคที่พิสูจน์ได้" : "Proven technical expertise."}</small></div>
+            <div className="trust-item"><Code2/><span>{th ? "ซอฟต์แวร์เฉพาะธุรกิจ" : "Custom Software"}</span><small>{th ? "ออกแบบตามเป้าหมายของคุณ" : "Tailored to your goals."}</small></div>
+            <div className="trust-item"><MonitorSmartphone/><span>{th ? "เว็บและโมบาย" : "Web & Mobile"}</span><small>{th ? "แอปพลิเคชันสมัยใหม่" : "Modern applications."}</small></div>
+            <div className="trust-item"><Bot/><span>{th ? "AI และ Automation" : "AI & Automation"}</span><small>{th ? "ผลลัพธ์ทางธุรกิจที่วัดได้" : "Practical business impact."}</small></div>
+            <div className="trust-item"><Headphones/><span>{th ? "ดูแลต่อเนื่อง" : "Support"}</span><small>{th ? "ดูแลหลังเปิดใช้งาน" : "Beyond launch."}</small></div>
           </div>
         </div>
       </section>
@@ -132,11 +132,11 @@ export default function Home() {
           <h2>{th ? "Technology Partner ที่เติบโตไปกับคุณ" : "A long-term technology partner."}</h2>
           <p className="lead-sm">{th ? "เราเชื่อมความเชี่ยวชาญด้านเทคนิคเข้ากับความเข้าใจเป้าหมายทางธุรกิจ" : "We combine technical excellence with a deep understanding of business goals."}</p>
           <div className="why-grid">
-            <div><ShieldCheck/><h3>Business-first thinking</h3><p>We focus on real outcomes, not just technology.</p></div>
-            <div><TrendingUp/><h3>Scalable architecture</h3><p>Built to grow with your business.</p></div>
-            <div><UsersRound/><h3>Clear milestones</h3><p>Transparent communication at every stage.</p></div>
-            <div><Clock3/><h3>Reliable delivery</h3><p>On time. On scope. On your side.</p></div>
-            <div><HeartHandshake/><h3>Ongoing support</h3><p>We&apos;re here for what&apos;s next.</p></div>
+            <div><ShieldCheck/><h3>{th ? "คิดจากธุรกิจเป็นหลัก" : "Business-first thinking"}</h3><p>{th ? "มุ่งผลลัพธ์จริง ไม่ใช่แค่เทคโนโลยี" : "We focus on real outcomes, not just technology."}</p></div>
+            <div><TrendingUp/><h3>{th ? "Architecture ที่ขยายได้" : "Scalable architecture"}</h3><p>{th ? "สร้างเพื่อเติบโตไปกับธุรกิจ" : "Built to grow with your business."}</p></div>
+            <div><UsersRound/><h3>{th ? "Milestone ที่ชัดเจน" : "Clear milestones"}</h3><p>{th ? "สื่อสารโปร่งใสในทุกขั้นตอน" : "Transparent communication at every stage."}</p></div>
+            <div><Clock3/><h3>{th ? "ส่งมอบได้อย่างมั่นใจ" : "Reliable delivery"}</h3><p>{th ? "ตรงเวลา ตรง Scope และอยู่ข้างคุณ" : "On time. On scope. On your side."}</p></div>
+            <div><HeartHandshake/><h3>{th ? "ดูแลต่อเนื่อง" : "Ongoing support"}</h3><p>{th ? "เราพร้อมดูแลสิ่งที่จะเกิดขึ้นต่อไป" : "We&apos;re here for what&apos;s next."}</p></div>
           </div>
         </div>
       </section>

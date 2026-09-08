@@ -1,7 +1,9 @@
 import PageHero from "@/components/PageHero";
 import ContactForm from "@/components/ContactForm";
+import { T } from "@/components/LanguageContext";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata = { title: "Contact" };
+export const metadata = pageMetadata("Contact", "Tell NXENABLE what you want to build and book a practical discovery conversation.", "/contact");
 
 export default function ContactPage() {
   return (
@@ -15,11 +17,11 @@ export default function ContactPage() {
           <ContactForm />
           <aside className="contact-card">
             <span className="eyebrow">NXENABLE TECHNOLOGIES CO., LTD.</span>
-            <h2>Start with a conversation.</h2>
-            <p>For project enquiries, partnerships and technical consultations:</p>
+            <T as="h2" en="Start with a conversation." th="เริ่มต้นด้วยการพูดคุย" />
+            <T as="p" en="For project enquiries, partnerships and technical consultations:" th="สำหรับการสอบถามโปรเจกต์ ความร่วมมือ และคำปรึกษาด้านเทคนิค" />
             <a href="mailto:contact@nxenable.co">contact@nxenable.co</a>
             <a href="https://nxenable.co">nxenable.co</a>
-            <div className="contact-note"><strong>Typical first step</strong><p>30–60 minute discovery call → Requirement summary → Proposal / Estimate.</p></div>
+            <div className="contact-note"><T as="strong" en="Typical first step" th="ขั้นตอนแรกที่มักเริ่มต้น" /><T as="p" en="30–60 minute discovery call → Requirement summary → Proposal / Estimate." th="Discovery Call 30–60 นาที → สรุป Requirement → Proposal / Estimate" /></div>
           </aside>
         </div>
       </section>

@@ -8,8 +8,8 @@ export default function Localized({
   as: Tag = "span",
   className
 }: {
-  en: string;
-  th: string;
+  en: React.ReactNode;
+  th: React.ReactNode;
   as?: React.ElementType;
   className?: string;
 }) {

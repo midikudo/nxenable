@@ -2,8 +2,10 @@ import PageHero from "@/components/PageHero";
 import Localized from "@/components/Localized";
 import CTA from "@/components/CTA";
 import { solutions } from "@/components/Data";
+import { pageMetadata } from "@/lib/seo";
+import { T } from "@/components/LanguageContext";
 
-export const metadata = { title: "Solutions" };
+export const metadata = pageMetadata("Solutions", "Business systems for POS, CRM, booking, membership, dashboards and internal workflows.", "/solutions");
 
 export default function SolutionsPage() {
   return (
@@ -17,7 +19,7 @@ export default function SolutionsPage() {
           {solutions.map(({title,titleTh,text,textTh,icon:Icon}) => (
             <article className="feature-card" key={title}>
               <div className="icon-disc"><Icon /></div><Localized as="h2" en={title} th={titleTh} /><Localized as="p" en={text} th={textTh} />
-              <p className="muted">Can be delivered as a standalone system or integrated into your existing ecosystem.</p>
+              <T as="p" className="muted" en="Can be delivered as a standalone system or integrated into your existing ecosystem." th="ส่งมอบเป็นระบบแยกหรือเชื่อมต่อกับ Ecosystem เดิมของคุณได้" />
             </article>
           ))}
         </div>

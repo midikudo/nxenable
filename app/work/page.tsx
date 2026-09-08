@@ -3,8 +3,9 @@ import Localized from "@/components/Localized";
 import PageHero from "@/components/PageHero";
 import CTA from "@/components/CTA";
 import { work } from "@/components/Data";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata = { title: "Work" };
+export const metadata = pageMetadata("Work", "Selected project experience across retail operations, booking, membership and internal tools.", "/work");
 
 export default function WorkPage() {
   return (
@@ -20,7 +21,7 @@ export default function WorkPage() {
               <div className={`case-visual visual-${i+1}`}><div className="mini-window"><span/><span/><span/><div/></div></div>
               <div className="case-content">
                 <span className="eyebrow">{item.category}</span><Localized as="h2" en={item.title} th={item.titleTh} /><Localized as="p" en={item.summary} th={item.summaryTh} />
-                <Link href={`/work/${item.slug}`}>View Case Study →</Link>
+                <Localized as="span" en={<Link href={`/work/${item.slug}`}>View Case Study →</Link>} th={<Link href={`/work/${item.slug}`}>ดู Case Study →</Link>} />
               </div>
             </article>
           ))}

@@ -2,8 +2,9 @@ import PageHero from "@/components/PageHero";
 import Localized from "@/components/Localized";
 import CTA from "@/components/CTA";
 import { services } from "@/components/Data";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata = { title: "Services" };
+export const metadata = pageMetadata("Services", "Custom software, web and mobile applications, integrations, business platforms and automation.", "/services");
 
 export default function ServicesPage() {
   return (

@@ -2,8 +2,9 @@ import PageHero from "@/components/PageHero";
 import Localized from "@/components/Localized";
 import CTA from "@/components/CTA";
 import { industries } from "@/components/Data";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata = { title: "Industries" };
+export const metadata = pageMetadata("Industries", "Technology solutions shaped around the realities of retail, healthcare, enterprise and service businesses.", "/industries");
 
 export default function IndustriesPage() {
   return (

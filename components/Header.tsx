@@ -2,6 +2,8 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { Menu, X } from "lucide-react";
+import { useEffect, useState } from "react";
 import Logo from "./Logo";
 import { useLanguage } from "./LanguageContext";
 
@@ -17,9 +19,29 @@ const nav = [
 export default function Header() {
   const pathname = usePathname();
   const { lang, setLang } = useLanguage();
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const isActive = (href: string) =>
     pathname === href || (href !== "/" && pathname.startsWith(`${href}/`));
+
+  useEffect(() => {
+    if (!isMenuOpen) return;
+
+    const closeOnEscape = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setIsMenuOpen(false);
+    };
+
+    document.body.style.overflow = "hidden";
+    document.addEventListener("keydown", closeOnEscape);
+    return () => {
+      document.body.style.overflow = "";
+      document.removeEventListener("keydown", closeOnEscape);
+    };
+  }, [isMenuOpen]);
+
+  useEffect(() => {
+    setIsMenuOpen(false);
+  }, [pathname]);
 
   return (
     <header className="site-header">
@@ -67,8 +89,51 @@ export default function Header() {
           >
             {lang === "th" ? "คุยโปรเจกต์กับเรา →" : "Book a Discovery Call →"}
           </Link>
+
+          <button
+            type="button"
+            className="mobile-menu-toggle"
+            onClick={() => setIsMenuOpen((open) => !open)}
+            aria-label={isMenuOpen ? (lang === "th" ? "ปิดเมนู" : "Close menu") : (lang === "th" ? "เปิดเมนู" : "Open menu")}
+            aria-expanded={isMenuOpen}
+            aria-controls="mobile-navigation"
+          >
+            {isMenuOpen ? <X aria-hidden="true" /> : <Menu aria-hidden="true" />}
+          </button>
         </div>
       </div>
+
+      {isMenuOpen && (
+        <>
+          <button
+            type="button"
+            className="mobile-menu-backdrop"
+            aria-label={lang === "th" ? "ปิดเมนู" : "Close menu"}
+            onClick={() => setIsMenuOpen(false)}
+          />
+          <nav id="mobile-navigation" className="mobile-nav" aria-label={lang === "th" ? "เมนูหลัก" : "Main navigation"}>
+            {nav.map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                className={isActive(item.href) ? "nav-link active" : "nav-link"}
+                aria-current={isActive(item.href) ? "page" : undefined}
+                onClick={() => setIsMenuOpen(false)}
+              >
+                {lang === "th" ? item.th : item.en}
+              </Link>
+            ))}
+            <Link
+              href="/contact"
+              className={`btn btn-primary mobile-nav-contact${isActive("/contact") ? " active" : ""}`}
+              aria-current={isActive("/contact") ? "page" : undefined}
+              onClick={() => setIsMenuOpen(false)}
+            >
+              {lang === "th" ? "คุยโปรเจกต์กับเรา →" : "Book a Discovery Call →"}
+            </Link>
+          </nav>
+        </>
+      )}
     </header>
   );
 }

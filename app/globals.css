@@ -1546,6 +1546,7 @@ select {
   .site-header .brand-x {
     --x-w: 22px;
     --x-h: 19px;
+    margin: 1px 1px;
   }
 
   .header-contact {
